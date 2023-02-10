@@ -1,0 +1,222 @@
+* {
+    box-sizing: 0;
+}
+
+:root{
+    --heading: 'Bellefair';
+    --text:'Barlow Condensed';
+    --ligh-blue: #D0D6F9;
+    --black: #0B0D17;
+    --ofwhite:#ffffff;
+}
+body {
+    background-image: url(../photos/home/background-home-desktop.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo {
+    margin-left: 40px;
+}
+nav {
+    display:flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+header nav {
+    background-color: hsla(0, 0%, 0%, 0.39);
+    height: 96px;
+    width: 60%;
+}
+header nav::before{
+    content: "";
+    position: absolute;
+    width:33%;
+    height: 1px;
+    background-color: #ffffff;
+    opacity: 0.251;
+    left: 9%;
+}
+.taps{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+a{
+    text-decoration: none;
+    color:white;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    font-family: var(--text);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+a span {
+    font-weight: bold;
+}
+a::before {
+    content: "";
+    position: absolute;
+    background-color:gray;
+    height: 0px;
+    width: 100%;
+    left: 0;
+    bottom: -38px;
+    transition: 0.3s;
+}
+a:hover::before {
+    height: 3px;
+}
+.content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 80%;
+    color: var(--ligh-blue);
+    font-family: var(--text);
+}
+.left-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 18%;
+}
+.right-section {
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.space{
+    color: var(--ofwhite);
+    font-family: var(--heading);
+    font-size: 150px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.paragraph .travel{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    width: 400px;
+    font-weight: 400;
+    font-size: 28px;
+}
+.home-text{
+    font-size: 18px;
+    line-height: 2em;
+}
+.explore {
+    position: relative;
+    font-family: var(--heading);
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--black);
+    background-color: var(--ofwhite);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.explore::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: 0.5s;
+}
+.explore:hover::before {
+    width: 400px;
+    height: 400px;
+}
+.dis-no{
+    display: none;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight:400;
+    letter-spacing: 4.7px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    color: var(--ofwhite);
+}
+h2 span{
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.356);
+}
+#destination nav{
+    width: 400px;
+    grid-column: 1/3;
+    justify-content: flex-start;
+}
+#destination a::before {
+    bottom: -10px;
+}
+#destination .right-section {
+    padding-top: 160px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+}
+#destination .paragraph{
+    position: relative;
+    grid-column: 1/3;
+    width: 530px;
+}
+#destination .paragraph::after{
+    content: "";
+    width:100%;
+    height: 1px;
+    background-color: #ffffff;
+    opacity: 0.251;
+    display: block;
+    position: absolute;
+    bottom: 200px;
+    bottom: -50px;
+}
+.time p,.distance p{
+    font-family: var(--heading);
+    font-size: 28px;
+    text-transform: uppercase;
+
+}
+#destination h5{
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    font-weight: 400;
+}
+#destination .time p,.distance p{
+    color: var(--ofwhite);
+}
+
+#destination h1{
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+    font-size: 100px;
+    font-family: var(--heading);
+    color: var(--ofwhite);
+}

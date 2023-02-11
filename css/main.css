@@ -21,7 +21,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
 }
 .logo {
     margin-left: 40px;
@@ -31,6 +34,9 @@ nav {
     align-items: center;
     width: 50%;
     justify-content: center;
+}
+.menu-icon {
+    display: none;
 }
 header nav {
     background-color: hsla(0, 0%, 0%, 0.39);
@@ -83,10 +89,11 @@ a.hovered::before {
 }
 .content {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns:  50% 50%;
     height: 80%;
     color: var(--ligh-blue);
     font-family: var(--text);
+    padding-top: 110px;
 }
 .left-section {
     position: relative;
@@ -94,6 +101,7 @@ a.hovered::before {
     justify-content: center;
     flex-direction: column;
     margin-left: 18%;
+    grid-column: 1/2;
 }
 .right-section {
     position: relative;
@@ -101,6 +109,8 @@ a.hovered::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-column: 2/3;
+
 }
 .space{
     color: var(--ofwhite);
@@ -179,7 +189,7 @@ h2 span{
     bottom: -10px;
 }
 #destination .right-section {
-    padding-top: 160px;
+    padding-top: 180px;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: flex-start;
@@ -198,7 +208,7 @@ h2 span{
     display: block;
     position: absolute;
     bottom: 200px;
-    bottom: -50px;
+    bottom: -20px;
 }
 .time p,.distance p{
     font-family: var(--heading);
@@ -227,4 +237,7 @@ h2 span{
 .planet-content{
     display: grid;
     grid-template-columns: auto auto;
+}
+.menu-icon {
+    display: none;
 }

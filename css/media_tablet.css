@@ -3,3 +3,110 @@
         display: none;
     }
 }
+@media (max-width: 1080px ){
+    .right-section .taps{
+        width: 100%;
+    }
+    .content{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .menu-icon {
+        display: block;
+        position: absolute;
+        width: 45px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+        z-index: 16;
+        
+    }
+    .menu-icon span{
+        display: block;
+        position: absolute;
+        width: 45px;
+        height: 7px;
+        background-color: var(--ligh-blue);
+        transition: all 0.3s ease;
+    }
+    .menu-icon span:first-child{
+        top: 0;
+    }
+    .menu-icon span:nth-child(2){
+        top: 14px;
+    }
+    .menu-icon span:last-child{
+        top: 28px;
+    }
+    .menu-icon .open:nth-child(2){
+        opacity: 0;
+    }
+    .menu-icon .open:first-child,
+    .menu-icon .open:last-child {
+        width: 30px;
+        height: 4px;
+        top: 14px;
+    }
+    .menu-icon .open:first-child{
+        transform: rotate(45deg);
+    }
+    .menu-icon .open:last-child{
+        transform: rotate(-45deg);
+    }
+    .left-section {
+        margin-left: 0;
+    }
+    #destination .right-section,.right-section {
+        padding-top: 60px;
+        grid-column: 1/3;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo{
+        margin-top: 30px;
+    }
+    .left-section img{
+        margin-top: 100px;
+    }
+    .left-section h2{
+        top: 0;
+    }
+    #destination nav {
+        width: 100%;
+        justify-content: center;
+        margin: 30px 0px;
+    }
+    header {
+        margin-top: 0px;
+    }
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        position: absolute;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0;
+    }
+    header nav .taps{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70%;
+    }
+    header nav .taps a{
+        width: 36%;
+        text-align: center;
+    }
+    .show{
+        transition: 0.3s ease;
+        width: 70%;
+    }
+    .paragraph {
+        margin: 0;
+    }
+}

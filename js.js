@@ -7,7 +7,16 @@ let destinationinfo = document.querySelector("#destination .right-section");
 let navArray = document.getElementsByClassName("nav-item");
 let navtaps = document.getElementsByClassName("nav-selector");
 
-
+let burgerIcon = document.querySelector(".menu-icon");
+burgerIcon.onclick = () => {
+    let spans = document.querySelectorAll(".menu-icon span");
+    let sideMenu = document.querySelector("header nav");
+    for(let i = 0; i < 3; i++){
+        spans[i].classList.toggle("open");
+    } 
+    sideMenu.classList.toggle("show");
+        
+}
 
 function getinfos() {
     let myRequest = new XMLHttpRequest();
@@ -107,6 +116,8 @@ function navselector(n) {
     navtaps[n].classList.add("hovered");
     console.log(n);
 }
+
+navselector(0);
 for(let m = 0; m < 4; m++){
     navtaps[m].onclick = () => navselector(m);
 }

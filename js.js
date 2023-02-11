@@ -18,7 +18,6 @@ function getinfos() {
             let destinations = jsonOpj.destinations;
             let crew = jsonOpj.crew;
             let technology = jsonOpj.technology;
-            // let planetContent = document.querySelector(".planet-content");
             
             setPlanets(destinations);
             

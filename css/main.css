@@ -98,10 +98,12 @@ a.hovered::before {
 .left-section {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     margin-left: 18%;
     grid-column: 1/2;
+    height: 495px;
+    padding-top: 200px;
 }
 .right-section {
     position: relative;
@@ -199,6 +201,7 @@ h2 span{
     grid-column: 1/3;
     width: 530px;
 }
+
 #destination .paragraph::after{
     content: "";
     width:100%;
@@ -237,6 +240,44 @@ h2 span{
 .planet-content{
     display: grid;
     grid-template-columns: auto auto;
+}
+
+#crew .paragraph{
+    width: 500px;
+    
+}
+#crew .paragraph h1{
+    color: var(--ofwhite);
+    font-size: 56px;
+    text-transform: uppercase;
+    font-family: var(--heading);
+    font-weight: 400;
+}
+#crew .paragraph h1 span{
+    color: gray;
+    font-size: 28px;
+}
+#crew .paragraph p{
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+}
+.crew-selectors{
+    width: 120px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.crew-selectors span:hover{
+    background-color: var(--ofwhite);
+}
+.crew-selectors span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    background-color: gray;
 }
 .menu-icon {
     display: none;

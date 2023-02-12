@@ -3,6 +3,10 @@ let planetNav = document.querySelector(".right-section .taps");
 let planetImg = document.querySelector(".left-section .img");
 let destinationText = document.querySelector("#destination");
 let destinationinfo = document.querySelector("#destination .right-section");
+let crewSection = document.querySelector("#crew .left-section");
+let crewSelectors = document.querySelector(".crew-selectors");
+let crewImg = document.querySelector("#crew .right-section");
+
 
 let navArray = document.getElementsByClassName("nav-item");
 let navtaps = document.getElementsByClassName("nav-selector");
@@ -11,6 +15,7 @@ let burgerIcon = document.querySelector(".menu-icon");
 burgerIcon.onclick = () => {
     let spans = document.querySelectorAll(".menu-icon span");
     let sideMenu = document.querySelector("header nav");
+
     for(let i = 0; i < 3; i++){
         spans[i].classList.toggle("open");
     } 
@@ -29,6 +34,7 @@ function getinfos() {
             let technology = jsonOpj.technology;
             
             setPlanets(destinations);
+            setcrew(crew);
             
         }
     };
@@ -91,9 +97,9 @@ function setPlanets (e) {
     let arrPlanetsContent = document.querySelectorAll(".left-section .img img");
     
     for(let i = 0; i < arrTaps.length;i++){
-        arrTaps[i].onclick = () => hidePlanet(i);
+        arrTaps[i].onclick = () => PlanetSelect(i);
     }
-    function hidePlanet(x){
+    function PlanetSelect(x){
         for(let i = 0; i < 4; i++){
             arrTaps[i].classList.remove("hovered");
             arrPlanets[i].classList.add("dis-no");
@@ -103,7 +109,7 @@ function setPlanets (e) {
         arrPlanets[x].classList.remove("dis-no");
         arrTaps[x].classList.add("hovered");
     }
-    hidePlanet(0);
+    PlanetSelect(0);
 }
 
 // select taps from navbar
@@ -120,4 +126,54 @@ function navselector(n) {
 navselector(0);
 for(let m = 0; m < 4; m++){
     navtaps[m].onclick = () => navselector(m);
+}
+
+function setcrew (e) {
+    for(let i = 0; i < e.length; i++){
+        let paragraph = document.createElement("div");
+        paragraph.classList.add("paragraph");
+        
+        let img = document.createElement("div");
+        img.classList.add("img");
+        img.innerHTML = `<img src="${e[i].images.webp}">`
+
+        crewImg.appendChild(img);
+
+        paragraph.innerHTML = `
+        <h1><span>${e[i].role}</span><br>${e[i].name}</h1>
+        <p>
+        ${e[i].bio}
+        </p>
+        `;
+        
+        let span = document.createElement("span");
+        span.classList.add("selector");
+        crewSelectors.appendChild(span);
+
+        
+        crewSelectors.before(paragraph);
+        paragraph.classList.add("dis-no");
+        img.classList.add("dis-no");
+    }
+    crewSelect(e);
+    
+}
+function crewSelect (e){
+    let crewParagraph = document.querySelectorAll("#crew .paragraph");
+    let selector = document.querySelectorAll(".selector");
+    let crewImage = document.querySelectorAll("#crew .img");
+
+    tall(0);
+
+    for(let i = 0; i < e.length; i++){
+        selector[i].onclick = () => tall(i);
+    }
+    function tall (b) {
+        for(let i = 0; i < 4; i++){
+                crewParagraph[i].classList.add("dis-no");
+                crewImage[i].classList.add("dis-no");
+            }
+            crewParagraph[b].classList.remove("dis-no");
+            crewImage[b].classList.remove("dis-no");
+    }
 }

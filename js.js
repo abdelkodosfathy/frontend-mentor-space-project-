@@ -35,6 +35,7 @@ function getinfos() {
             
             setPlanets(destinations);
             setcrew(crew);
+            // settech(technology);
             
         }
     };

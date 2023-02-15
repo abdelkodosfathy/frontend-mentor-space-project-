@@ -282,3 +282,32 @@ h2 span{
 .menu-icon {
     display: none;
 }
+.tech-container{
+    display: flex;
+}
+.tech-container p{
+    font-size: 22px;
+    margin: 0px 0px 0px 50px;
+}
+.tech-container p span{
+    font-size: 56px;
+    font-family: var(--heading);
+    color: var(--ofwhite);
+}
+.tech-selectors{
+    display: flex;
+    height: 270px;
+    width: 80px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.tech-selectors span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid white;
+}

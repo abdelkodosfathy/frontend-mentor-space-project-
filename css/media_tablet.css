@@ -1,25 +1,30 @@
-@media (max-width: 1000px ){
+@media (max-width: 1080px ){
     nav::before{
-        display: none;
+        display: none !important;
     }
 }
 @media (max-width: 1080px ){
     .right-section .taps{
         width: 100%;
     }
+    body{
+        height: 100vh;
+        min-width: 600px;
+    }
     .content{
         grid-template-columns: 1fr;
         justify-items: center;
     }
     .menu-icon {
-        display: block;
+        display: flex;
         position: absolute;
         width: 45px;
         height: 35px;
         top: 10px;
         right: 10px;
         z-index: 16;
-        
+        align-items: center;
+        justify-content: center;
     }
     .menu-icon span{
         display: block;
@@ -55,6 +60,7 @@
     }
     .left-section {
         margin-left: 0;
+        width: 450px;
     }
     #destination .right-section,.right-section {
         padding-top: 60px;

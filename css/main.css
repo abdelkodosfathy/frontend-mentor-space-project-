@@ -290,9 +290,12 @@ h2 span{
     margin: 0px 0px 0px 50px;
 }
 .tech-container p span{
-    font-size: 56px;
+    font-size: 48px;
     font-family: var(--heading);
     color: var(--ofwhite);
+    text-transform: uppercase;
+    display: block;
+    width: 405px;
 }
 .tech-selectors{
     display: flex;

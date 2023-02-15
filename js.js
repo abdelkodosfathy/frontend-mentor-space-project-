@@ -6,7 +6,10 @@ let destinationinfo = document.querySelector("#destination .right-section");
 let crewSection = document.querySelector("#crew .left-section");
 let crewSelectors = document.querySelector(".crew-selectors");
 let crewImg = document.querySelector("#crew .right-section");
-
+let techSection = document.querySelector("#technology .left-section");
+let techImg = document.querySelector("#technology .right-section");
+let techContainer = document.querySelector("#technology .left-section .tech-container");
+let techSelectors = document.querySelector("#technology .left-section .tech-selectors");
 
 let navArray = document.getElementsByClassName("nav-item");
 let navtaps = document.getElementsByClassName("nav-selector");
@@ -36,6 +39,7 @@ function getinfos() {
             setPlanets(destinations);
             setcrew(crew);
             // settech(technology);
+            setTech(technology);
             
         }
     };
@@ -136,7 +140,7 @@ function setcrew (e) {
         
         let img = document.createElement("div");
         img.classList.add("img");
-        img.innerHTML = `<img src="${e[i].images.webp}">`
+        img.innerHTML = `<img src="${e[i].images.webp}">`;
 
         crewImg.appendChild(img);
 
@@ -164,17 +168,68 @@ function crewSelect (e){
     let selector = document.querySelectorAll(".selector");
     let crewImage = document.querySelectorAll("#crew .img");
 
-    tall(0);
+    taps(0);
 
     for(let i = 0; i < e.length; i++){
-        selector[i].onclick = () => tall(i);
+        selector[i].onclick = () => taps(i);
     }
-    function tall (b) {
+    function taps (b) {
         for(let i = 0; i < 4; i++){
                 crewParagraph[i].classList.add("dis-no");
                 crewImage[i].classList.add("dis-no");
             }
             crewParagraph[b].classList.remove("dis-no");
             crewImage[b].classList.remove("dis-no");
+    }
+}
+
+function setTech(e) {
+    for (let i = 0; i < e.length; i ++){
+        let paragraph = document.createElement("div");
+        paragraph.classList.add("paragraph");
+        paragraph.classList.add("dis-no");
+
+        let selector = document.createElement("span");
+        selector.classList.add("tech-selector");
+        selector.innerHTML = `${i+1}`;
+
+        let img = document.createElement("div");
+        img.classList.add("img");
+        img.classList.add("dis-no");
+        img.innerHTML = `<img src="${e[i].images.portrait}">`
+        techImg.appendChild(img);
+
+        paragraph.innerHTML = `
+        <p>
+            THE TERMINOLOGY ... 
+            <br>
+            <span>${e[i].name}</span>
+            <br>
+            ${e[i].description}
+        </p>
+        `;
+
+        techSelectors.appendChild(selector);
+        techContainer.appendChild(paragraph);
+    }
+    techSelect(e);
+}
+function techSelect (e){
+    let techParagraph = document.querySelectorAll("#technology .paragraph");
+    let selector = document.querySelectorAll(".tech-selector");
+    let techImage = document.querySelectorAll("#technology .img");
+
+    taps(0);
+
+    for(let i = 0; i < e.length; i++){
+        selector[i].onclick = () => taps(i);
+    }
+    function taps (b) {
+        for(let i = 0; i < e.length; i++){
+                techParagraph[i].classList.add("dis-no");
+                techImage[i].classList.add("dis-no");
+            }
+            techParagraph[b].classList.remove("dis-no");
+            techImage[b].classList.remove("dis-no");
     }
 }

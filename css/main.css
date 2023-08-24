@@ -1,7 +1,6 @@
 * {
     box-sizing: 0;
 }
-
 :root{
     --heading: 'Bellefair';
     --text:'Barlow Condensed';
@@ -125,7 +124,6 @@ a.hovered::before {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-
 .paragraph{
     width: 400px;
     font-weight: 400;
@@ -167,7 +165,6 @@ a.hovered::before {
 .dis-no{
     display: none !important;
 }
-
 h2 {
     font-size: 28px;
     font-weight:400;
@@ -201,7 +198,6 @@ h2 span{
     grid-column: 1/3;
     width: 530px;
 }
-
 #destination .paragraph::after{
     content: "";
     width:100%;
@@ -217,7 +213,6 @@ h2 span{
     font-family: var(--heading);
     font-size: 28px;
     text-transform: uppercase;
-
 }
 #destination h5{
     font-size: 16px;
@@ -228,7 +223,6 @@ h2 span{
 #destination .time p,.distance p{
     color: var(--ofwhite);
 }
-
 #destination h1{
     text-transform: uppercase;
     margin: 0;
@@ -241,7 +235,6 @@ h2 span{
     display: grid;
     grid-template-columns: auto auto;
 }
-
 #crew .paragraph{
     width: 500px;
     
@@ -304,7 +297,6 @@ h2 span{
     justify-content: space-between;
     flex-direction: column;
 }
-
 .tech-selectors span{
     display: flex;
     justify-content: center;

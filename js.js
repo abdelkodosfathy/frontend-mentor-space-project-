@@ -140,7 +140,7 @@ function setcrew (e) {
         
         let img = document.createElement("div");
         img.classList.add("img");
-        img.innerHTML = `<img src=".${e[i].images.webp}">`;
+        img.innerHTML = `<img src="${e[i].images.webp}">`;
 
         crewImg.appendChild(img);
 
@@ -196,7 +196,7 @@ function setTech(e) {
         let img = document.createElement("div");
         img.classList.add("img");
         img.classList.add("dis-no");
-        img.innerHTML = `<img src=".${e[i].images.portrait}">`
+        img.innerHTML = `<img src="${e[i].images.portrait}">`
         techImg.appendChild(img);
 
         paragraph.innerHTML = `
